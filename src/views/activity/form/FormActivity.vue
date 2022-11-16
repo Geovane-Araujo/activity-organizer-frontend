@@ -5,9 +5,9 @@
     </div>
     <div class="card-form-activity">
       <div class="fields p-fluid grid">
-        <div class="col-12 md:col-4">
+        <div style="margin-top: 8px;" class="col-12 md:col-4">
           <span class="p-float-label">
-            <Calendar inputId="icon" v-model="form.data" :showIcon="true" dateFormat="dd/mm/yy"/>
+            <Calendar inputId="icon" v-model="form.data" :showIcon="true" :showTime="true" dateFormat="dd/mm/yy"/>
             <label for="username">Data</label>
           </span>
         </div>
