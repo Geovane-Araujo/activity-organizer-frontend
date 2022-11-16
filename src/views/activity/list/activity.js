@@ -6,32 +6,21 @@ import { Login } from '@/model/Login';
 import Button from 'primevue/button';
 import { Services } from '@/services/Service';
 import { useToast } from "primevue/usetoast";
+import Listactivity from '@/components/activity/Listactivity.vue';
 
 
 export default {
-  name: 'myorglogin',
+  name: 'myorgactivity',
   setup () {
     const form = ref(new Login())
-    const toast = useToast()
-    const services = new Services()
     const router = useRouter()
 
-    const onLogin = () => {
-      
-      services.onPost('login', form.value, toast,0).then(res => {
-        sessionStorage.setItem('myorganizer.access.token',res.data.token)
-        router.push({name: 'home'})
-      })
-    }
-
-    const onRegister = () => {
-      router.push({name: 'myorgregister'})
-    }
-    return {form, onLogin, onRegister}
+    return {form}
   },
   components: {
     InputText,
     Password,
-    Button
+    Button,
+    Listactivity
   }
 }

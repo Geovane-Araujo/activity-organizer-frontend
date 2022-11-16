@@ -1,0 +1,29 @@
+.home{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.header{
+  margin-bottom: 100px;
+}
+.itens{
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity{
+  margin: 10px;
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  background-color: #1F2D40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

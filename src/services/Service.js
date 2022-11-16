@@ -12,8 +12,10 @@ export class Services{
       }
     }).catch(err => {
       toast.add({severity:'error', summary: 'Erro', detail:err.response.data.description, life: 3000});
-      sessionStorage.setItem('myorganizer.access.token','')
-      router.push({name: 'home'})
+      if(err.request.status === 401) {
+        sessionStorage.setItem('myorganizer.access.token','')
+        router.push({name: 'home'})
+      }
     });
     return ret;
   }

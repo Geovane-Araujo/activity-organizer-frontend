@@ -1,12 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/home/Home.vue'
 import beforeEach from './beforeEach'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+  },
+  {
+    path: '/activity',
+    name: 'myorgactivity',
+    component: () => import('../views/activity/list/Activity.vue')
   },
   {
     path: '/login',
@@ -17,6 +22,11 @@ const routes = [
     path: '/register',
     name: 'myorgregister',
     component: () => import('../register/Register.vue')
+  },
+  {
+    path: '/form-activity/:id',
+    name: 'myorgformactivity',
+    component: () => import('../views/activity/form/FormActivity.vue')
   }
 ]
 

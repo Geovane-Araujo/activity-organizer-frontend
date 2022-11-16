@@ -1,0 +1,67 @@
+.c-listactivity{
+  background-color: #1F2D40;
+  width: 100%;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.c-item{
+  width: calc(100% - 10px);
+  height: 70px;
+  border-top-right-radius: 25px;
+  background-color: rgb(12, 17, 22);
+  display: flex;
+  margin-bottom: 16px;
+}
+.c-priority{
+  width: 1%;
+  background-color: rgb(230, 23, 57);
+}
+.c-content{
+  width: 99%;
+  border-top-right-radius: 25px;
+  display: flex;
+  padding: 5px;
+}
+.c-text{
+  width: 90%;
+}
+.c-check{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+}
+.c-text-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50%;
+}
+.c-text-description{
+  display: flex;
+  align-items: center;
+  height: 50%;
+  font-size: 12px;
+}
+.c-buttons{
+  padding: 10px;
+  border-top-right-radius: 25px;
+  background-color: #1F2D40;
+  height: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.c-add{
+  width: 5%;
+}
+.c-filters{
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
