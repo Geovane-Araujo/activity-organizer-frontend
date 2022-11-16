@@ -6,7 +6,10 @@ export default {
     const onRoute = (e) => {
       route.push({name: e})
     }
-    return {onRoute}
+    const onName = () => {
+      return sessionStorage.getItem('user')
+    }
+    return {onRoute,onName}
   },
   components: {
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="header">
-      Olá Geovane seu lindo!!
+      Olá {{onName()}}!!
     </div>
     <div class="itens">
       <div @click="onRoute('myorgactivity')" class="p-ripple activity" v-ripple>

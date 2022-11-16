@@ -20,6 +20,7 @@ export default {
       
       services.onPost('login', form.value, toast,0).then(res => {
         sessionStorage.setItem('myorganizer.access.token',res.data.token)
+        sessionStorage.setItem('user',res.data.nome)
         router.push({name: 'home'})
       })
     }
