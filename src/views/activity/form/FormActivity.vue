@@ -30,12 +30,19 @@
           </span>
         </div>
       </div>
-        <div class="btns-form fields p-fluid grid">
-          <div class="col-12 md:col-2">
-            <Button @click="onReturn()" label="Cancelar" class="p-button-warning" />
+        <div class="btns-form">
+          <div class="fields p-fluid grid">
+            <div class="col-12 md:col-12">
+              <Button @click="onDelete()" label="Excluir" class="p-button-danger" />
+            </div>
           </div>
-          <div class="col-12 md:col-2">
-            <Button @click="onSave()" label="Salvar"  class="p-button-info"/>
+          <div class="fields p-fluid grid">
+            <div class="col-12 md:col-6">
+              <Button @click="onReturn()" label="Cancelar" class="p-button-warning" />
+            </div>
+            <div class="col-12 md:col-6">
+              <Button @click="onSave()" label="Salvar"  class="p-button-info"/>
+            </div>
           </div>
         </div>
     </div>

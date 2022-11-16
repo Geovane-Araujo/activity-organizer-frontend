@@ -51,8 +51,15 @@ export default {
       router.go(-1)
     }
 
+    const onDelete = () => {
+      services.onGet('deleteById/'+form.value.id, toast).then(res => {
+        if(res != '')
+          router.go(-1)
+      })
+    }
+
     
-    return {form, onSave, status, onReturn}
+    return {form, onSave, status, onReturn,onDelete}
   },
   components: {
     InputText,
