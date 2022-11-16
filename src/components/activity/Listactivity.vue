@@ -24,7 +24,9 @@
           </div>
         </div>
         <div class="c-check">
-          OK
+          <div v-if="item.status == 1"><i class=" pi pi-check" style="color: #4aff56;"></i></div>
+          <div v-else-if="item.status == 2"><i class=" pi pi-times" style="color: #db305e;"></i></div>
+          <div v-else-if="item.status == 0"><i class=" pi pi-question" style="color: #d5f03e;"></i></div>
         </div>
       </div>
     </div>

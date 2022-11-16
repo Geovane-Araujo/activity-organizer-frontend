@@ -21,7 +21,8 @@ export default {
     const route = useRoute()
     const status = ref([
       {name: 'Pendente', code: 0},
-      {name: 'Concluida', code: 1}
+      {name: 'Concluida', code: 1},
+      {name: 'Cancelada', code: 2}
     ]);
 
     onMounted(() => {
@@ -41,6 +42,7 @@ export default {
         id: id
       }
       services.onPost('activityById', params, toast, 0).then(res => {
+        res.data.data = new Date(res.data.data)
         form.value = res.data
       })
     }
