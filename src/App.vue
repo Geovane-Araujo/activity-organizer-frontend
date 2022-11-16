@@ -23,5 +23,15 @@ body{
   -moz-osx-font-smoothing: grayscale;
   color:aliceblue;
 }
+::-webkit-scrollbar-track {
+    background-color: #1F2D40;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: #17212F;
+}
+::-webkit-scrollbar-thumb {
+    background: #17212F;
+}
 
 </style>
