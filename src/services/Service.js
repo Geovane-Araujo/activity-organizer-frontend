@@ -3,6 +3,8 @@ import axios from 'axios'
 
 export class Services{
 
+
+
   async onPost(service, form, toast, type){
     var ret = ''
     await axios.post(new BaseAddress().url  + service, form, {headers: {Authorization: 'Bearer ' + sessionStorage.getItem('myorganizer.access.token')} }).then(res => {
@@ -23,7 +25,7 @@ export class Services{
     var ret = ''
     await axios.get(new BaseAddress().url  + service, {headers: {Authorization: 'Bearer ' + sessionStorage.getItem('myorganizer.access.token')} }).then(res => {
       ret = res
-      toast.add({severity:'success', summary: 'Erro', detail: res.data, life: 3000});
+      toast.add({severity:'success', summary: 'Sucesso', detail: res.data, life: 3000});
     
     }).catch(err => {
       toast.add({severity:'error', summary: 'Erro', detail:err.response.data.description, life: 3000});
