@@ -10,8 +10,10 @@
   font-size: 30px;
 }
 .card-form-activity{
+  padding: 10px;
+  overflow-y: auto;
   background-color: #1F2D40;
-  width: 40%;
+  width: 50%;
   border-radius: 10px;
 }
 .fields{
@@ -31,7 +33,7 @@
   cursor: pointer;
 }
 @media screen and (max-width: 600px) {
-  .card-login{
+  .card-form-activity{
     width: 100%;
   }
 }

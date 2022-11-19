@@ -10,5 +10,10 @@
   margin-bottom: 40px;
 }
 .c-list{
-  width: 40%;
+  width: 50%;
+}
+@media screen and (max-width: 600px) {
+  .c-list{
+    width: 100%;
+  }
 }
