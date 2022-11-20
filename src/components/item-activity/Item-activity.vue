@@ -2,7 +2,7 @@
   <div class="c-item-header">
     {{dia}}
   </div>
-  <div @click="onEdit(item.id)" v-for="item in itens" :key="item.id" class="p-ripple c-item" v-ripple>
+  <div @dragexit="drop(dia)" @dragover="drop(dia)"  draggable="true"  @click="onEdit(item.id)" v-for="item in itens" :key="item.id" class="p-ripple c-item" v-ripple>
       <div class="c-priority">
       </div>
       <div class="c-content">

@@ -69,6 +69,11 @@ export default {
       return moment(date).format('HH:mm')
     }
 
+    function onEditDate(dia, item) {
+      console.log(dia)
+      console.log(item)
+    }
+
     function getIntervalWeek(){
       const data = dataStart.value
       dataStart.value.setDate((dataStart.value.getDate() - data.getDay()))
@@ -94,7 +99,7 @@ export default {
       }
     }
 
-    return { form,listItens, onGetAll, onFormatDate,onBefore, onAfter, onAdd, onEdit,itens, dataStart, dataEnd }
+    return { form,listItens, onGetAll, onFormatDate,onBefore, onAfter, onAdd, onEdit,itens, dataStart, dataEnd,onEditDate }
   },
   components: {
     InputText,

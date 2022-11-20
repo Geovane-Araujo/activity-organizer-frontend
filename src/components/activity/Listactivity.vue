@@ -10,7 +10,7 @@
   </div>
   <div class="c-kanban">
     <div v-for="it in itens" :key="it" class="c-listactivity">
-      <ItemActivity :dia="it.dia" :itens="it.listItens" :onEdit="onEdit" :onFormatDate="onFormatDate"/>
+      <ItemActivity :onEditDate="onEditDate" :dia="it.dia" :itens="it.listItens" :onEdit="onEdit" :onFormatDate="onFormatDate"/>
     </div>
   </div>
 </template>
