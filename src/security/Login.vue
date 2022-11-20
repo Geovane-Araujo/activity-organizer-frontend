@@ -13,7 +13,7 @@
         </div>
         <div style="margin-top: 8px;" class="col-1 md:col-12">
           <span class="p-float-label">
-            <Password :feedback="false" id="username" v-model="form.password" />
+            <Password @keypress.enter="onLogin()"  :feedback="false" id="username" v-model="form.password" />
             <label for="username">Senha</label>
           </span>
         </div>

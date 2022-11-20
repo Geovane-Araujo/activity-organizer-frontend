@@ -8,26 +8,25 @@ import { Services } from '@/services/Service';
 import moment from 'moment';
 import Calendar from 'primevue/calendar';
 import { Activity } from '@/model/Activity';
+import ItemActivity from '../item-activity/Item-activity.vue'
 
 
 
 export default {
   name: 'Listactivity',
-  props: {
-    itens: {
-      type: Array,
-      require: false
-    }
-  },
-  setup (props) {
+  setup () {
+    var itens = ref(new Array())
     const listItens = ref(new Array())
     const form = ref(new Activity())
+    const dataStart = ref(new Date())
+    const dataEnd = ref(new Date())
     const services = new Services()
     const toast = useToast()
     const router = useRouter()
 
 
     onMounted(() => {
+      
       form.value.data = new Date()
       onGetAll()
     })
@@ -35,23 +34,25 @@ export default {
 
 
     function onGetAll(e){
+      getIntervalWeek()
       const filter = {
-        data: moment(form.value.data).format('YYYY-MM-DD HH:mm:ss.SSSS')
+        dataStart: moment(dataStart.value).format('YYYY-MM-DD HH:mm:ss.SSSS'),
+        dataEnd: moment(dataEnd.value).format('YYYY-MM-DD HH:mm:ss.SSSS')
       }
-      form.value.data = new Date(form.value.data)
+      dataStart.value = new Date(dataStart.value)
+      dataEnd.value = new Date(dataEnd.value)
       services.onPost('activityAll', filter, toast,0).then(res => {
-        listItens.value = res.data
+        getDataWeek(res.data)
       })
     }
 
     function onBefore(){
-      var newDate = new Date()
-      form.value.data.setDate(form.value.data.getDate() - 1)
+      dataStart.value.setDate(dataStart.value.getDate() - 6)
       onGetAll()
     }
 
     function onAfter(){
-      form.value.data.setDate(form.value.data.getDate() + 1)
+      dataStart.value.setDate(dataStart.value.getDate() + 6)
       onGetAll()
     }
 
@@ -65,15 +66,41 @@ export default {
 
 
     function onFormatDate(date) {
-      return moment(date).format('DD/MM/YYYY HH:mm')
+      return moment(date).format('HH:mm')
     }
 
-    return { form,listItens, onGetAll, onFormatDate,onBefore, onAfter, onAdd, onEdit }
+    function getIntervalWeek(){
+      const data = dataStart.value
+      dataStart.value.setDate((dataStart.value.getDate() - data.getDay()))
+      dataEnd.value.setDate(dataStart.value.getDate() + 6)
+    }
+
+    function getDataWeek(dataList){
+      itens.value = []
+      dataStart.value.setDate((dataStart.value.getDate() - dataStart.value.getDay()))
+      let data = new Date(dataStart.value)
+      dataEnd.value = new Date(data)
+      dataEnd.value.setDate((dataStart.value.getDate() + 6))
+
+      while(data <= dataEnd.value){
+        var dias = {
+          dia: 'dia',
+          listItens: []
+        }
+        dias.dia = data.getDate()
+        dias.listItens = dataList.filter(e => new Date(e?.data).getDate() === data.getDate())
+        itens.value.push(dias)
+        data.setDate((data.getDate() + 1))
+      }
+    }
+
+    return { form,listItens, onGetAll, onFormatDate,onBefore, onAfter, onAdd, onEdit,itens, dataStart, dataEnd }
   },
   components: {
     InputText,
     Password,
     Button,
-    Calendar
+    Calendar,
+    ItemActivity
   }
 }
