@@ -9,12 +9,14 @@ import moment from 'moment';
 import Calendar from 'primevue/calendar';
 import { Activity } from '@/model/Activity';
 import ItemActivity from '../item-activity/Item-activity.vue'
+import translation from '@/translate/translation';
 
 
 
 export default {
   name: 'Listactivity',
   setup () {
+    let daysWritter = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     var itens = ref(new Array())
     const listItens = ref(new Array())
     const form = ref(new Activity())
@@ -30,7 +32,6 @@ export default {
       form.value.data = new Date()
       onGetAll()
     })
-
 
 
     function onGetAll(e){
@@ -52,7 +53,7 @@ export default {
     }
 
     function onAfter(){
-      dataStart.value.setDate(dataStart.value.getDate() + 6)
+      dataStart.value.setDate(dataStart.value.getDate() + 7)
       onGetAll()
     }
 
@@ -90,13 +91,19 @@ export default {
       while(data <= dataEnd.value){
         var dias = {
           dia: 'dia',
-          listItens: []
+          listItens: [],
+          dayWritter: ''
         }
         dias.dia = data.getDate()
+        dias.dayWritter = onGetDayWritten(data.getDay());
         dias.listItens = dataList.filter(e => new Date(e?.data).getDate() === data.getDate())
         itens.value.push(dias)
         data.setDate((data.getDate() + 1))
       }
+    }
+
+    function onGetDayWritten(day) {
+      return translation.onTranslate(daysWritter[day]);
     }
 
     return { form,listItens, onGetAll, onFormatDate,onBefore, onAfter, onAdd, onEdit,itens, dataStart, dataEnd,onEditDate }

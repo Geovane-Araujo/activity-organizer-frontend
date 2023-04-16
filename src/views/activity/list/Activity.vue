@@ -1,7 +1,7 @@
 <template>
   <div class="activities">
     <div class="header-activities">
-      Atividades
+      {{ translation.onTranslate('activity') }}
     </div>
     <div class="c-list">
       <Listactivity/>

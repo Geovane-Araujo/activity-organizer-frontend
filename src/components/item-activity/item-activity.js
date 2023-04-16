@@ -9,6 +9,10 @@ export default {
       type: Number,
       require: false
     },
+    dayWritter: {
+      type: String,
+      require: false
+    },
     onEdit: Function,
     onFormatDate: Function,
     onEditDate: Function
