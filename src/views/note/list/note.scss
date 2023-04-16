@@ -1,0 +1,19 @@
+.notes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.header-notes{
+  font-size: 35px;
+  margin: 20px;
+  margin-bottom: 30px;
+}
+.c-list{
+  width: 95%;
+}
+@media screen and (max-width: 600px) {
+  .c-list{
+    width: 100%;
+  }
+}

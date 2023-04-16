@@ -6,7 +6,8 @@ const pt = {
   thursday: "Quinta-feira",
   friday: "Sexta-feira",
   saturday: "Sábado",
-  activity: "Atividades"
+  activity: "Atividades",
+  note: "Anotações"
 };
 
 const en = {
@@ -17,7 +18,8 @@ const en = {
   thursday: "Thursday",
   friday: "Friday",
   saturday: "Saturday",
-  activity: "Activity"
+  activity: "Activity",
+  note: "Notes"
 };
 
 const es = {

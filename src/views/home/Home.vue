@@ -17,8 +17,9 @@
         <i class="or or-lifestyle"></i>
         {{ translation.onTranslate('activity') }}
       </div>
-      <div class="p-ripple activity" v-ripple>
-        Será desenvolvido?
+      <div @click="onRoute('myorgnote')" class="p-ripple activity" v-ripple>
+        <i class="or or-note"></i>
+        {{ translation.onTranslate('note') }}
       </div>
     </div>
   </div>

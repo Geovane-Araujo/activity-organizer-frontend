@@ -1,0 +1,32 @@
+.form-note{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.form-header-note{
+  margin: 30px;
+  font-size: 30px;
+}
+.card-form-note{
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #1F2D40;
+  width: 90%;
+  height: 100%;
+  border-radius: 10px;
+}
+.fields{
+  margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .card-form-note{
+    width: 100%;
+  }
+}
+.btns-form{
+  display: flex;
+  justify-content: space-between;
+
+}

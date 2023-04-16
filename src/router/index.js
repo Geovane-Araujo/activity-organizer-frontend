@@ -27,7 +27,17 @@ const routes = [
     path: '/form-activity/:id',
     name: 'myorgformactivity',
     component: () => import('../views/activity/form/FormActivity.vue')
-  }
+  },
+  {
+    path: '/note',
+    name: 'myorgnote',
+    component: () => import('../views/note/list/Note.vue')
+  },
+  {
+    path: '/form-note/:id',
+    name: 'myorgformnote',
+    component: () => import('../views/note/form/FormNote.vue')
+  },
 ]
 
 const router = createRouter({
